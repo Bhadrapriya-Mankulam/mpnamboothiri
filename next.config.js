@@ -5,8 +5,8 @@ const nextConfig = {
     unoptimized: true, // Required for static export
   },
   trailingSlash: true,
-  basePath: '/priest-mumbai', // GitHub Pages subdirectory
-  assetPrefix: '/priest-mumbai', // For assets in subdirectory
+  basePath: '/hindu-priest', // GitHub Pages subdirectory
+  assetPrefix: '/hindu-priest', // For assets in subdirectory
 }
 
 module.exports = nextConfig

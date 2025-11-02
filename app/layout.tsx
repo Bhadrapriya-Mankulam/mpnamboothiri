@@ -52,7 +52,7 @@ export default function RootLayout({
               "@type": "ProfessionalService",
               name: "Vedic Priest Mumbai",
               description: "Traditional Vedic rituals and ceremonies",
-              url: "https://gadheyan-dev.github.io/priest-mumbai",
+              url: "https://gadheyan-dev.github.io/hindu-priest",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Mumbai",
