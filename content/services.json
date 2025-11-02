@@ -1,0 +1,113 @@
+[
+  {
+    "slug": "griha-pravesh",
+    "name": "Griha Pravesh",
+    "short": "House warming ceremony to bless your new home",
+    "duration": "2-3 hours",
+    "itemsClient": ["Rice", "Fruits", "Flowers", "Coconut"],
+    "itemsPriest": ["Vedic texts", "Puja materials", "Diyas"],
+    "startingDakshina": "Contact for details",
+    "onSite": true,
+    "online": false
+  },
+  {
+    "slug": "satyanarayan-puja",
+    "name": "Satyanarayan Puja",
+    "short": "Blessings of Lord Vishnu for peace and prosperity",
+    "duration": "3-4 hours",
+    "itemsClient": ["Prashad ingredients", "Flowers", "Fruits"],
+    "itemsPriest": ["Puja items", "Sankalp materials"],
+    "startingDakshina": "Contact for details",
+    "onSite": true,
+    "online": true
+  },
+  {
+    "slug": "rudrabhishek",
+    "name": "Rudrabhishek",
+    "short": "Sacred abhishekam to Lord Shiva",
+    "duration": "2-3 hours",
+    "itemsClient": ["Milk", "Honey", "Bilva leaves", "Flowers"],
+    "itemsPriest": ["Rudraksha", "Vedic mantras"],
+    "startingDakshina": "Contact for details",
+    "onSite": true,
+    "online": false
+  },
+  {
+    "slug": "lakshmi-puja",
+    "name": "Lakshmi Puja",
+    "short": "Worship of Goddess Lakshmi for wealth and prosperity",
+    "duration": "2-3 hours",
+    "itemsClient": ["Lotus flowers", "Gold ornaments", "Sweets"],
+    "itemsPriest": ["Puja materials", "Lakshmi mantras"],
+    "startingDakshina": "Contact for details",
+    "onSite": true,
+    "online": true
+  },
+  {
+    "slug": "ganapati-puja",
+    "name": "Ganapati Puja",
+    "short": "Invoking Lord Ganesha for success and removing obstacles",
+    "duration": "2 hours",
+    "itemsClient": ["Modak", "Red flowers", "Durva grass"],
+    "itemsPriest": ["Ganesha mantras", "Puja items"],
+    "startingDakshina": "Contact for details",
+    "onSite": true,
+    "online": true
+  },
+  {
+    "slug": "wedding-rituals",
+    "name": "Wedding Rituals",
+    "short": "Complete Vedic wedding ceremonies",
+    "duration": "Full day",
+    "itemsClient": ["Custom list provided"],
+    "itemsPriest": ["All ritual materials"],
+    "startingDakshina": "Contact for details",
+    "onSite": true,
+    "online": false
+  },
+  {
+    "slug": "annaprashan",
+    "name": "Annaprashan",
+    "short": "First solid food ceremony for infants",
+    "duration": "1-2 hours",
+    "itemsClient": ["Kheer", "Rice", "Fruits"],
+    "itemsPriest": ["Blessing materials"],
+    "startingDakshina": "Contact for details",
+    "onSite": true,
+    "online": false
+  },
+  {
+    "slug": "shraddha",
+    "name": "Shraddha",
+    "short": "Rituals for honoring departed ancestors",
+    "duration": "2-3 hours",
+    "itemsClient": ["Pinda", "Rice", "Black sesame"],
+    "itemsPriest": ["Vedic texts", "Ritual materials"],
+    "startingDakshina": "Contact for details",
+    "onSite": true,
+    "online": false
+  },
+  {
+    "slug": "vastu-puja",
+    "name": "Vastu Puja",
+    "short": "Harmonizing energies of your space",
+    "duration": "2-3 hours",
+    "itemsClient": ["Flowers", "Fruits", "Grains"],
+    "itemsPriest": ["Vastu materials", "Mantras"],
+    "startingDakshina": "Contact for details",
+    "onSite": true,
+    "online": false
+  },
+  {
+    "slug": "homam",
+    "name": "Homam Variants",
+    "short": "Sacred fire ceremonies for various purposes",
+    "duration": "2-4 hours",
+    "itemsClient": ["Ghee", "Wood", "Herbs"],
+    "itemsPriest": ["Fire materials", "Vedic mantras"],
+    "startingDakshina": "Contact for details",
+    "onSite": true,
+    "online": false
+  }
+]
+

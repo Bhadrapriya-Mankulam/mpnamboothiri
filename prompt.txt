@@ -1,0 +1,177 @@
+You are a senior full-stack engineer + brand designer. Build a modern, fast, accessible marketing website for a Hindu priest based in Mumbai (Bombay). The site should feel contemporary and sleek while evoking ancient temple vibes inspired by Hampi and the Kailasa Temple at Ellora. Use subtle, tasteful animations of flowers and bells, and respectful deity (Shiva) motifs. Avoid kitsch; prioritize elegance, readability, and performance.
+
+## Tech & Project Setup
+- Framework: Next.js 14 (App Router) with TypeScript.
+- Styling: Tailwind CSS + CSS variables for theme tokens.
+- Animation: Framer Motion (for entrances, parallax, gentle float) and small CSS keyframes.
+- UI: shadcn/ui for base components; icon set via lucide-react + simple, line-style bell/flower icons.
+- Fonts:
+  - Headings: "Cinzel" (classical serif) or "Marcellus" (Romanesque vibe).
+  - Body + Devanagari: "Noto Serif Devanagari" for Sanskrit shlokas and Marathi/Hindi text.
+  - Preload critical fonts; provide fallbacks.
+- Images: Only royalty-free. Prefer Unsplash, Pexels, Wikimedia Commons (temple exteriors/interiors, stone textures, flowers, diyas). Document the source of each image in /public/attribution.md.
+- Forms & Email: API route with server-side validation (zod) + provider-agnostic email utility (e.g., SMTP placeholder). No secrets in repo; use environment variables.
+- Map: Embedded map (Mumbai) using a privacy-friendly iframe or a lightweight map library (no API key required if possible).
+- SEO & Analytics: next-seo + JSON-LD. No cookies. If analytics needed, use Plausible (defer loading) with env var toggle.
+
+## Brand & Art Direction
+- Mood: Calm, sacred, refined. Modern minimal composition with stone-like textures and temple geometry cues.
+- Color palette (define as CSS variables + Tailwind config):
+  --saffron-600: #D97706      // accent (saffron)
+  --deep-indigo-900: #1B1A3A  // sacred depth (night indigo)
+  --temple-stone-700: #4B5563 // stone gray
+  --temple-stone-200: #E5E7EB // light stone
+  --gilded-gold-500: #C6A34F  // subtle gold for lines/dividers
+  --peacock-teal-700: #0F766E // secondary accent
+  --lotus-rose-400: #F472B6   // micro accents on hover only
+  --text-primary: #1F2937
+  --text-muted: #4B5563
+  - Background: gradient from deep-indigo-900 to temple-stone-700 at 6% opacity overlay.
+  - Use gold as 1px hairline dividers or icon strokes; do NOT fill large areas with gold.
+  - Saffron used sparingly for CTAs and small highlights.
+
+## Accessibility
+- Minimum text contrast AA (prefer AAA for body).
+- Motion-reduced experience respects prefers-reduced-motion; disable float/parallax in that case.
+- Keyboard focus visible, logical tab order. ARIA labels on bells/flowers as decorative unless interactive.
+
+## Information Architecture (Pages)
+1) Home (/)
+   - Hero: Elegant bell motif top-right; subtle bell swing on page scroll (≤6°). Background contains extremely subtle stone relief texture.
+   - Copy: “Vedic Priest in Mumbai for Puja, Homam, Samskara & Temple Rituals.”
+   - CTA: “Book a Puja” + “Call Now” (tel: link).
+   - Quick badges: Languages spoken (Sanskrit, Hindi, Marathi, English), 15+ years experience (editable), On-site & remote pujas.
+   - Floating petals animation (very light, 1–3 petals, low opacity).
+   - Section: “Services at a Glance” (cards with small Shiva trident line icon, diya, lotus, conch).
+   - Section: About the Priest (portrait, short bio, lineage/gurukul if provided as placeholder).
+   - Testimonials (3–6 cards, culturally respectful names; placeholders).
+   - Service Areas (Mumbai neighborhoods list).
+   - Footer: Contact, WhatsApp link, basic nav, simple copyright, attribution link.
+
+2) Services (/services)
+   - Grid of service pages/cards: Griha Pravesh, Satyanarayan Puja, Rudrabhishek, Lakshmi Puja, Ganapati Puja, Wedding rituals, Annaprashan, Shraddha, Vastu puja, Homam variants.
+   - Each service card: 1–2 line description, typical duration, required items (priest-provided vs. client-provided), starting dakshina (placeholder), “Book” button.
+
+3) Individual Service (/services/[slug])
+   - Hero strip with stone texture and a micro gold divider.
+   - Sections: Overview, Procedure (step list), Auspicious timings note (generic), What you need, What the priest brings, Duration, Dakshina guidance (placeholder), FAQs.
+   - Structured data: Service schema.
+
+4) About (/about)
+   - Bio, training/lineage, temple affiliations (placeholder), photo gallery (royalty-free temple imagery), values (cleanliness, punctuality, authenticity).
+
+5) Calendar & Booking (/booking)
+   - Simple request form: name, phone, email, service, date, location, notes.
+   - Success page with confirmation, follow-up instructions, and WhatsApp deep link.
+   - Server-side validation; spam protection (honeypot).
+
+6) Contact (/contact)
+   - Contact details with tel: and WhatsApp: links.
+   - Embedded Mumbai map (lightweight).
+
+7) Gallery (/gallery)
+   - Masonry grid of royalty-free imagery: diyas, lotus, bells, stone carvings. On hover, slight scale (≤1.02) + gold hairline frame.
+
+8) Blog (/blog) + Post (/blog/[slug]) [optional scaffolding]
+   - For festival explainers, muhurat notes, and ritual guides.
+   - BlogPost schema, Open Graph images generation via @vercel/og.
+
+## Header, Nav, and Footer
+- Header: Minimal. Left: logotype wordmark (Devanagari + Latin), Right: nav (Home, Services, Booking, Contact). CTA button “Book a Puja”.
+- Bell icon in header gently swings on scroll (spring animation; max amplitude capped; reduce motion when prefers-reduced-motion).
+- Sticky on scroll up; hides on scroll down (Framer Motion).
+- Footer: Secondary nav, contact, WhatsApp quick action, legal links, attributions.
+
+## Animations (specific, subtle)
+- Petal float: keyframes for 12–18s slow rise + 2–3px drift; render 2–3 petals only; pause on hover; disabled for reduced motion.
+- Bell swing: Framer Motion rotate from 0 to ±6° with damping; triggered by scroll progress (0.0–0.2).
+- Section reveal: Fade + 8px upward translate over 400ms when in viewport.
+- Gold divider shimmer: extremely subtle 1s linear gradient sweep on hover only.
+
+## Imagery Guidelines (royalty-free)
+- Sources: Unsplash (flowers/temples), Pexels (objects), Wikimedia Commons (temple architecture, stone reliefs).
+- Example subject keywords (do NOT download automatically; include links in attribution):
+  - “temple bells”, “lotus flower macro”, “diya lamp”, “indian temple stone texture”, “shivalinga abhishekam (non-identifiable closeups)”, “south indian temple corridor”.
+- Respectful use: no deity caricatures. If using Shiva motifs, prefer abstract symbols (trishul, damaru, bilva leaves) or non-identifiable shrine elements.
+- Place all images in /public/images with descriptive names; record source URL, photographer, license in /public/attribution.md.
+
+## Components to Implement
+- <Header/> with animated bell and CTA.
+- <PetalLayer/> background (portal-mounted, pointer-events:none).
+- <Section/> wrapper with reveal on view.
+- <ServiceCard/> with icon + chips for “On-site”, “Online”.
+- <TestimonialCard/>.
+- <ContactStrip/> with tel and WhatsApp.
+- <StoneDivider/> (1px gold line with micro shimmer on hover).
+- <HeroTexture/> (applies subtle stone pattern via CSS).
+
+## Content (placeholders; keep editable in JSON)
+Create /content/*.json files:
+- site.json: name, shortTagline, phone, whatsapp, email, address, languages.
+- services.json: array with {slug, name, short, duration, itemsClient, itemsPriest, startingDakshina}.
+- testimonials.json.
+- nav.json for nav labels in en, hi, mr.
+Implement a simple content loader; no CMS required.
+
+## Internationalization
+- Languages: English default; optional Hindi (hi) and Marathi (mr) toggles.
+- Store UI labels in /content/i18n/*.json.
+- Date/time formatted with locale; avoid hard-coded English strings.
+
+## Performance
+- Targets: Lighthouse ≥ 95 Performance, ≥ 100 Best Practices, ≥ 100 SEO, ≥ 100 Accessibility on a mid-range mobile profile.
+- Use next/image with correct sizes; lazy-load below fold.
+- No blocking scripts. Animate only opacity/transform. Cap re-renders.
+
+## SEO & Metadata
+- next-seo: title, description per page from content.
+- JSON-LD:
+  - Organization/LocalBusiness (Hindu priest service, area: Mumbai).
+  - Service schema on service pages.
+  - BreadcrumbList on content pages.
+- OG/Twitter images via @vercel/og. Provide a default OG template with bell + stone motif.
+
+## Schema Example (Home)
+- name: "Pandit [Name] — Vedic Priest in Mumbai"
+- addressLocality: "Mumbai"
+- areaServed: "Mumbai Metropolitan Region"
+- telephone: "+91-XXXXXXXXXX"
+- sameAs: WhatsApp link (if any)
+
+## Booking Flow
+- Client completes form -> serverless email with summary to site owner + confirmation page for user.
+- No PII storage; just email relay. Add clear disclaimer.
+
+## Footer Legal
+- Simple “Services are performed as per Vedic tradition. Availability subject to muhurat and prior bookings.”
+- Link to attribution.md.
+
+## Testing (must include)
+- Unit: vitest + @testing-library/react for components.
+- E2E: Playwright with tests for:
+  - Navigation and header behavior (hide on scroll down, show on scroll up).
+  - Booking form validation and happy path (mock server handler).
+  - i18n toggle persists selection (localStorage).
+  - Lighthouse CI (optional) or basic perf budgets using bundlesize.
+
+## Deliverables
+- Complete Next.js project.
+- README.md with:
+  - How to run locally and build.
+  - How to swap images and edit content JSON.
+  - How to add a new service page.
+  - Environment variables for email provider (document placeholders only).
+  - Attribution instructions and example template.
+- Deployed preview script (Vercel-ready).
+
+## Acceptance Criteria (no ambiguity)
+- Visual style matches palette and mood above; gold used only as lines/accents.
+- Animations are subtle, respect reduced motion, and do not hurt CLS.
+- Home, Services, Service Detail, About, Booking, Contact, Gallery, Blog index all implemented.
+- Forms validate on server and client; successful submit triggers serverless email (mock okay).
+- All images are royalty-free with recorded attributions.
+- Lighthouse scores meet targets on mobile in production build.
+- Tests: at least 8 unit tests + 4 Playwright E2E specs pass in CI.
+- No console errors; no unused ESLint/TypeScript errors.
+
+Now scaffold the project and produce production-ready code with the above specifications.

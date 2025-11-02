@@ -1,0 +1,16 @@
+{
+  "common": {
+    "bookPuja": "Book a Puja",
+    "callNow": "Call Now",
+    "viewDetails": "View Details",
+    "learnMore": "Learn More"
+  },
+  "home": {
+    "hero": {
+      "title": "Vedic Priest in Mumbai",
+      "subtitle": "Traditional Vedic rituals and ceremonies with authenticity and devotion",
+      "description": "For Puja, Homam, Samskara & Temple Rituals"
+    }
+  }
+}
+

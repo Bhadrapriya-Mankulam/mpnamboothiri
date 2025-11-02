@@ -1,0 +1,30 @@
+{
+  "en": {
+    "home": "Home",
+    "services": "Services",
+    "booking": "Booking",
+    "contact": "Contact",
+    "about": "About",
+    "gallery": "Gallery",
+    "blog": "Blog"
+  },
+  "hi": {
+    "home": "होम",
+    "services": "सेवाएं",
+    "booking": "बुकिंग",
+    "contact": "संपर्क",
+    "about": "के बारे में",
+    "gallery": "गैलरी",
+    "blog": "ब्लॉग"
+  },
+  "mr": {
+    "home": "मुख्यपृष्ठ",
+    "services": "सेवा",
+    "booking": "बुकिंग",
+    "contact": "संपर्क",
+    "about": "आमच्याबद्दल",
+    "gallery": "गॅलरी",
+    "blog": "ब्लॉग"
+  }
+}
+
