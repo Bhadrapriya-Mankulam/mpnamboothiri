@@ -1,57 +1,53 @@
 import Link from "next/link";
-import Image from "next/image";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Flame, Star } from "lucide-react";
 import { Service } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
 interface ServiceCardProps {
   service: Service;
   className?: string;
-  imageIndex?: number;
 }
 
-export default function ServiceCard({ service, className, imageIndex = 1 }: ServiceCardProps) {
-  const imageSrc = `/images/PHOTO-2025-12-05-20-11-53(${imageIndex}).jpg`;
-  
+export default function ServiceCard({ service, className }: ServiceCardProps) {
   return (
     <Link
       href={`/services/${service.slug}`}
       className={cn(
-        "block bg-white rounded-lg shadow-sm hover:shadow-md transition-all border border-temple-stone-200 hover:border-gilded-gold-500/30 group overflow-hidden",
+        "block bg-gradient-to-br from-white to-temple-stone-50 rounded-lg shadow-md hover:shadow-xl transition-all border border-temple-stone-200 hover:border-gilded-gold-500/50 group overflow-hidden",
         className
       )}
     >
-      <div className="relative h-48 w-full">
-        <Image
-          src={imageSrc}
-          alt={service.name}
-          fill
-          className="object-cover group-hover:scale-105 transition-transform duration-300"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-4">
-          <h3 className="font-heading text-xl font-semibold text-white mb-1">
-            {service.name}
-          </h3>
+      <div className="relative bg-gradient-to-r from-saffron-600 to-temple-gold-600 p-6">
+        <div className="flex items-center justify-between">
+          <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform">
+            <Flame className="w-8 h-8 text-white" />
+          </div>
+          <Star className="w-6 h-6 text-white/40 group-hover:text-white/80 transition-colors" />
         </div>
       </div>
       <div className="p-6">
-        <p className="text-text-muted text-sm mb-4">{service.short}</p>
+        <h3 className="font-heading text-xl font-semibold text-deep-indigo-900 mb-2 group-hover:text-saffron-600 transition-colors">
+          {service.name}
+        </h3>
+        <p className="text-text-muted text-sm mb-4 line-clamp-2">{service.short}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {service.onSite && (
-            <span className="px-2 py-1 bg-peacock-teal-700/10 text-peacock-teal-700 rounded text-xs">
+            <span className="px-3 py-1 bg-peacock-teal-700/10 text-peacock-teal-700 rounded-full text-xs font-medium">
               On-site
             </span>
           )}
           {service.online && (
-            <span className="px-2 py-1 bg-peacock-teal-700/10 text-peacock-teal-700 rounded text-xs">
+            <span className="px-3 py-1 bg-peacock-teal-700/10 text-peacock-teal-700 rounded-full text-xs font-medium">
               Online
             </span>
           )}
         </div>
-        <div className="flex items-center justify-between">
-          <span className="text-sm text-text-muted">Duration: {service.duration}</span>
-          <span className="text-sm font-semibold text-deep-indigo-900 group-hover:text-saffron-600 transition-colors">
+        <div className="flex items-center justify-between pt-4 border-t border-temple-stone-200">
+          <span className="text-sm text-text-muted flex items-center gap-1">
+            <Sparkles className="w-4 h-4" />
+            {service.duration}
+          </span>
+          <span className="text-sm font-semibold text-deep-indigo-900 group-hover:text-saffron-600 transition-colors flex items-center gap-1">
             View Details →
           </span>
         </div>
