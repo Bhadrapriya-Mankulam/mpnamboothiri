@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PetalLayer from "@/components/PetalLayer";
-import TempleAudio from "@/components/TempleAudio";
+// import TempleAudio from "@/components/TempleAudio";
 
 const cinzel = Cinzel({
   subsets: ["latin"],
@@ -43,7 +43,7 @@ export default function RootLayout({
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
-        <TempleAudio />
+        {/* <TempleAudio /> */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
