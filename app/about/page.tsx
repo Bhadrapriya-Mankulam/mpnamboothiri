@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Section from "@/components/Section";
 import StoneDivider from "@/components/StoneDivider";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About - Mankulam Purushothaman Namboothiri",
@@ -28,11 +29,13 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-start mb-12">
-              <div className="relative aspect-[4/5] rounded-lg overflow-hidden bg-temple-stone-200 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <p className="text-temple-stone-700 text-sm">Portrait Image</p>
-                  <p className="text-temple-stone-700 text-xs mt-2">Add image at /public/images/placeholder-portrait.jpg</p>
-                </div>
+              <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-xl">
+                <Image
+                  src="/images/PHOTO-2025-12-05-20-11-53(2).jpg"
+                  alt="Purushothaman Namboothiri - Vedic Priest and Astrologer"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div>
                 <h2 className="font-heading text-2xl font-semibold text-deep-indigo-900 mb-4">
@@ -144,12 +147,17 @@ export default function AboutPage() {
                 Temple Gallery
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {[1, 2, 3, 4].map((i) => (
+                {[3, 4, 5, 6].map((i) => (
                   <div
                     key={i}
-                    className="relative aspect-square rounded-lg overflow-hidden bg-temple-stone-200 flex items-center justify-center hover:scale-105 transition-transform"
+                    className="relative aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"
                   >
-                    <p className="text-temple-stone-700 text-xs text-center px-2">Temple Image {i}</p>
+                    <Image
+                      src={`/images/PHOTO-2025-12-05-20-11-53(${i}).jpg`}
+                      alt={`Sacred ceremony ${i}`}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                 ))}
               </div>
