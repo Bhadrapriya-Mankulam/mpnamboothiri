@@ -39,6 +39,9 @@ jobs:
       - name: Add .nojekyll file
         run: touch ./out/.nojekyll
 
+      - name: Add CNAME file
+        run: echo "mpnamboothiri.com" > ./out/CNAME
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
