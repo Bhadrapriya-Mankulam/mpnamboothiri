@@ -8,12 +8,15 @@ export const metadata: Metadata = {
 };
 
 const galleryImages = [
-  { id: 1, src: "/images/placeholder-gallery-1.jpg", alt: "Diya lamps" },
-  { id: 2, src: "/images/placeholder-gallery-2.jpg", alt: "Lotus flowers" },
-  { id: 3, src: "/images/placeholder-gallery-3.jpg", alt: "Temple bells" },
-  { id: 4, src: "/images/placeholder-gallery-4.jpg", alt: "Stone carvings" },
-  { id: 5, src: "/images/placeholder-gallery-5.jpg", alt: "Temple architecture" },
-  { id: 6, src: "/images/placeholder-gallery-6.jpg", alt: "Ritual items" },
+  { id: 1, src: "/images/PHOTO-2025-12-05-20-11-53(1).jpg", alt: "Ceremony 1" },
+  { id: 2, src: "/images/PHOTO-2025-12-05-20-11-53(2).jpg", alt: "Ceremony 2" },
+  { id: 3, src: "/images/PHOTO-2025-12-05-20-11-53(3).jpg", alt: "Ceremony 3" },
+  { id: 4, src: "/images/PHOTO-2025-12-05-20-11-53(4).jpg", alt: "Ceremony 4" },
+  { id: 5, src: "/images/PHOTO-2025-12-05-20-11-53(5).jpg", alt: "Ceremony 5" },
+  { id: 6, src: "/images/PHOTO-2025-12-05-20-11-53(6).jpg", alt: "Ceremony 6" },
+  { id: 7, src: "/images/PHOTO-2025-12-05-20-11-53(7).jpg", alt: "Ceremony 7" },
+  { id: 8, src: "/images/PHOTO-2025-12-05-20-11-53(8).jpg", alt: "Ceremony 8" },
+  { id: 9, src: "/images/PHOTO-2025-12-05-20-11-53.jpg", alt: "Ceremony 9" },
 ];
 
 export default function GalleryPage() {

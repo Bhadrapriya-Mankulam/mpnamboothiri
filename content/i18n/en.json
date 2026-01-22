@@ -1,15 +1,44 @@
 {
   "common": {
-    "bookPuja": "Book a Puja",
+    "bookPuja": "Book a Consultation",
     "callNow": "Call Now",
     "viewDetails": "View Details",
-    "learnMore": "Learn More"
+    "learnMore": "Learn More",
+    "getInTouch": "Get in Touch",
+    "whatsappNow": "WhatsApp Now"
   },
   "home": {
     "hero": {
-      "title": "Vedic Priest in Mumbai",
-      "subtitle": "Traditional Vedic rituals and ceremonies with authenticity and devotion",
-      "description": "For Puja, Homam, Samskara & Temple Rituals"
+      "title": "Mankulam Purushothaman Namboothiri",
+      "subtitle": "A Legacy of Five Decades in Vedic Wisdom and Ritual Excellence",
+      "description": "Expert Astrologer & Namboothiri Priest specializing in Kerala-style Homams and Poojas. Over 50 years of spiritual service for devotees across India and worldwide."
+    },
+    "about": {
+      "heading": "Professional Profile",
+      "experience": "50+ Years of Spiritual Service",
+      "description": "With a profound spiritual journey spanning over 50 years, Purushothaman Namboothiri is a distinguished Namboothiri priest and astrologer rooted in the rich traditions of Kerala. His expertise is built upon a lifetime of devotion and the meticulous practice of Keraleeya Thantric rituals.",
+      "mumbaiService": "For the past 32 years, he has been a pillar of the spiritual community in Chembur, Mumbai. His distinguished career includes serving as the Melshanthi (Chief Priest) at the Chembur Shell Colony Ayyappa Temple from June 1993 to September 2000.",
+      "currentPractice": "Since 2000, he has dedicated his practice to providing personalized Astrological consultations, Poojas, and Homams, bringing the authentic spiritual essence of Sanatan Dharma to devotees in Mumbai and beyond.",
+      "globalReach": "Beyond his deep roots in Mumbai and Kerala, Purushothaman Namboothiri has earned a formidable reputation that extends across India and across the globe. He is highly respected for his spiritual integrity and precision, serving a diverse and prestigious clientele that includes devotees from across India, the United States, Europe, the Middle East, and beyond."
+    },
+    "whyChoose": {
+      "heading": "Why Choose His Services?",
+      "authenticity": {
+        "title": "Authenticity",
+        "description": "All rituals are performed in the authentic and traditional Kerala style"
+      },
+      "experience": {
+        "title": "Experience",
+        "description": "50 years of ritualistic expertise and 32 years of serving the Mumbai community"
+      },
+      "precision": {
+        "title": "Precision",
+        "description": "Deep knowledge of Astrology combined with Thantric precision ensures the best spiritual outcomes"
+      }
+    },
+    "contact": {
+      "heading": "Seek Spiritual Guidance",
+      "description": "Whether you are looking for astrological clarity or wish to perform a sacred ritual in the authentic Hindu tradition, Purushothaman Namboothiri is available for consultations both in-person and virtually for global devotees."
     }
   }
 }

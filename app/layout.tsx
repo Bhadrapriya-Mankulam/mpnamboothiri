@@ -21,13 +21,13 @@ const notoSerif = Noto_Serif_Devanagari({
 });
 
 export const metadata: Metadata = {
-  title: "Vedic Priest in Mumbai - Puja, Homam & Temple Rituals",
-  description: "Experienced Vedic priest in Mumbai offering traditional puja, homam, samskara ceremonies, and temple rituals. On-site and remote services available.",
-  keywords: ["vedic priest", "mumbai", "puja", "homam", "temple rituals", "samskara"],
+  title: "Mankulam Purushothaman Namboothiri - Expert Vedic Priest & Astrologer",
+  description: "Expert Astrologer & Namboothiri Priest specializing in Kerala-style Homams and Poojas. Over 50 years of spiritual service for devotees across India and worldwide. Book a consultation.",
+  keywords: ["vedic priest", "namboothiri priest", "mumbai astrologer", "kerala homam", "vedic astrology", "keraleeya thantric rituals", "chembur priest", "puja services", "homam services"],
   openGraph: {
     type: "website",
     locale: "en_IN",
-    siteName: "Vedic Priest Mumbai",
+    siteName: "Mankulam Purushothaman Namboothiri",
   },
 };
 

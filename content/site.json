@@ -1,10 +1,14 @@
 {
-  "name": "Pandit Vedic Priest",
-  "shortTagline": "Traditional Vedic rituals and ceremonies with authenticity and devotion",
-  "phone": "+91-XXXXXX-XXXX",
-  "whatsapp": "+91-XXXXXX-XXXX",
+  "name": "Mankulam Purushothaman Namboothiri",
+  "shortTagline": "A Legacy of Five Decades in Vedic Wisdom and Ritual Excellence",
+  "phone": "+91-9821529379",
+  "whatsapp": "+91-9821529379",
   "email": "contact@example.com",
-  "address": "Mumbai, Maharashtra, India",
-  "languages": ["Sanskrit", "Hindi", "Marathi", "English"]
+  "address": "Chembur, Mumbai, Maharashtra, India",
+  "languages": ["Sanskrit", "Malayalam", "Hindi", "English"],
+  "experience": "50+ years",
+  "expertise": ["Keraleeya Thantric Rituals", "Vedic Astrology", "Homams", "Sacred Poojas"],
+  "description": "With a profound spiritual journey spanning over 50 years, Purushothaman Namboothiri is a distinguished Namboothiri priest and astrologer rooted in the rich traditions of Kerala. For the past 32 years, he has been a pillar of the spiritual community in Chembur, Mumbai, serving devotees across India and worldwide.",
+  "chiefPriest": "Former Melshanthi (Chief Priest) at Chembur Shell Colony Ayyappa Temple (1993-2000)"
 }
 

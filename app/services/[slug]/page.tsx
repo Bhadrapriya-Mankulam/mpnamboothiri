@@ -179,12 +179,14 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                   Contact us to schedule this ceremony and receive guidance on
                   auspicious timings and preparation.
                 </p>
-                <Link
-                  href="/booking"
-                  className="inline-block px-6 py-3 bg-saffron-600 text-white rounded-md hover:bg-saffron-600/90 transition-colors"
+                <a
+                  href="https://wa.me/919821529379"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors"
                 >
-                  Book Now
-                </Link>
+                  Book via WhatsApp
+                </a>
               </div>
             </div>
           </div>
