@@ -24,6 +24,16 @@ export const metadata: Metadata = {
   title: "Mankulam Purushothaman Namboothiri - Expert Vedic Priest & Astrologer",
   description: "Expert Astrologer & Namboothiri Priest specializing in Kerala-style Homams and Poojas. Over 50 years of spiritual service for devotees across India and worldwide. Book a consultation.",
   keywords: ["vedic priest", "namboothiri priest", "mumbai astrologer", "kerala homam", "vedic astrology", "keraleeya thantric rituals", "chembur priest", "puja services", "homam services"],
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png' },
+    ],
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
