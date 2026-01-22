@@ -1,6 +1,7 @@
 import Section from "./Section";
 import StoneDivider from "./StoneDivider";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AboutSection() {
   return (
@@ -15,7 +16,15 @@ export default function AboutSection() {
             <StoneDivider className="max-w-xs mx-auto mb-8 mt-6" />
           </div>
 
-          <div className="mb-8">
+          <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
+            <div className="relative aspect-square rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src="/images/PHOTO-2025-12-05-20-11-53(1).jpg"
+                alt="Purushothaman Namboothiri - Vedic Priest"
+                fill
+                className="object-cover"
+              />
+            </div>
             <div>
               <h3 className="font-heading text-2xl font-semibold text-deep-indigo-900 mb-4">
                 A Distinguished Namboothiri Priest & Astrologer
