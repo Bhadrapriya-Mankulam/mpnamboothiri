@@ -5,7 +5,7 @@ import { Volume2, VolumeX } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export default function TempleAudio() {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
@@ -17,6 +17,39 @@ export default function TempleAudio() {
     audio.volume = 0.3;
     audio.loop = true;
 
+    // Try to auto-play on mount
+    const playAudio = () => {
+      audio.play()
+        .then(() => {
+          setIsPlaying(true);
+        })
+        .catch((err) => {
+          console.log("Audio autoplay blocked, will try on first interaction:", err);
+          setIsPlaying(false);
+        });
+    };
+
+    // Attempt autoplay immediately
+    playAudio();
+
+    // Handle user interaction for mobile browsers
+    const enableAudioOnInteraction = () => {
+      if (audio.paused) {
+        playAudio();
+      }
+      // Remove listeners after first successful play
+      document.removeEventListener('click', enableAudioOnInteraction);
+      document.removeEventListener('touchstart', enableAudioOnInteraction);
+      document.removeEventListener('scroll', enableAudioOnInteraction);
+      document.removeEventListener('keydown', enableAudioOnInteraction);
+    };
+
+    // Listen for various user interactions (for mobile/browser autoplay policy)
+    document.addEventListener('click', enableAudioOnInteraction);
+    document.addEventListener('touchstart', enableAudioOnInteraction);
+    document.addEventListener('scroll', enableAudioOnInteraction);
+    document.addEventListener('keydown', enableAudioOnInteraction);
+
     const handlePlay = () => setIsPlaying(true);
     const handlePause = () => setIsPlaying(false);
 
@@ -26,6 +59,10 @@ export default function TempleAudio() {
     return () => {
       audio.removeEventListener("play", handlePlay);
       audio.removeEventListener("pause", handlePause);
+      document.removeEventListener('click', enableAudioOnInteraction);
+      document.removeEventListener('touchstart', enableAudioOnInteraction);
+      document.removeEventListener('scroll', enableAudioOnInteraction);
+      document.removeEventListener('keydown', enableAudioOnInteraction);
     };
   }, []);
 
@@ -57,6 +94,8 @@ export default function TempleAudio() {
         ref={audioRef}
         src="/audio/temples-and-shrines.wav"
         preload="auto"
+        autoPlay
+        playsInline
         onError={(e) => {
           // Silently fail if audio file doesn't exist
           console.log("Audio file not found - add /public/audio/temples-and-shrines.wav");
