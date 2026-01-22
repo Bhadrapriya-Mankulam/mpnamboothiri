@@ -85,15 +85,6 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
-          <div>
-            <h4 className="font-semibold mb-4">Service Areas</h4>
-            <p className="text-sm">Mumbai Metropolitan Region</p>
-            <p className="text-xs mt-2 text-temple-stone-700">
-              Services are performed as per Vedic tradition. Availability
-              subject to muhurat and prior bookings.
-            </p>
-          </div>
         </div>
 
         <div className="mt-8 pt-8 border-t border-temple-stone-700 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">

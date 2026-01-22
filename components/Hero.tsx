@@ -44,9 +44,7 @@ export default function Hero() {
             <span className="leading-none">Book via WhatsApp</span>
           </a>
           <a
-            href="https://wa.me/919821529379"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="tel:+919821529379"
             className="px-8 py-4 bg-white text-deep-indigo-900 border-2 border-deep-indigo-900 rounded-md hover:bg-deep-indigo-900 hover:text-white transition-colors font-semibold text-lg inline-flex items-center justify-center gap-3 min-w-[240px]"
           >
             <Phone className="w-5 h-5 flex-shrink-0 -mt-0.5" />

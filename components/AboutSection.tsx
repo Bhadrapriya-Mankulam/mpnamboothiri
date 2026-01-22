@@ -15,13 +15,7 @@ export default function AboutSection() {
             <StoneDivider className="max-w-xs mx-auto mb-8 mt-6" />
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
-            <div className="relative aspect-square rounded-lg overflow-hidden bg-temple-stone-200 flex items-center justify-center">
-              <div className="text-center p-8">
-                <p className="text-temple-stone-700 text-sm">Portrait Image</p>
-                <p className="text-temple-stone-700 text-xs mt-2">Add image at /public/images/placeholder-portrait.jpg</p>
-              </div>
-            </div>
+          <div className="mb-8">
             <div>
               <h3 className="font-heading text-2xl font-semibold text-deep-indigo-900 mb-4">
                 A Distinguished Namboothiri Priest & Astrologer
