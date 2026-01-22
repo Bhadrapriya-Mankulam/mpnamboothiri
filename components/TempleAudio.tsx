@@ -55,11 +55,11 @@ export default function TempleAudio() {
     <>
       <audio
         ref={audioRef}
-        src="/audio/temple-bells.mp3"
+        src="/audio/temples-and-shrines.wav"
         preload="auto"
         onError={(e) => {
           // Silently fail if audio file doesn't exist
-          console.log("Audio file not found - add /public/audio/temple-bells.mp3");
+          console.log("Audio file not found - add /public/audio/temples-and-shrines.wav");
         }}
       />
       <button
