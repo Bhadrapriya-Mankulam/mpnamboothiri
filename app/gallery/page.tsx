@@ -1,12 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import { Metadata } from "next";
 import Section from "@/components/Section";
 import StoneDivider from "@/components/StoneDivider";
 import Image from "next/image";
-
-export const metadata: Metadata = {
-  title: "Gallery - Vedic Priest Mumbai",
-  description: "Gallery of sacred ceremonies, rituals, and temple imagery.",
-};
+import ImageLightbox from "@/components/ImageLightbox";
 
 const galleryImages = [
   { id: 1, src: "/images/PHOTO-2025-12-05-20-11-53(1).jpg", alt: "Sacred Ceremony" },
@@ -21,6 +20,8 @@ const galleryImages = [
 ];
 
 export default function GalleryPage() {
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
+  
   return (
     <>
       <section className="relative pt-20 pb-12 stone-texture">
@@ -44,6 +45,7 @@ export default function GalleryPage() {
               <div
                 key={image.id}
                 className="relative aspect-square rounded-lg overflow-hidden group cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300"
+                onClick={() => setLightboxImage({ src: image.src, alt: image.alt })}
               >
                 <Image
                   src={image.src}
@@ -62,6 +64,16 @@ export default function GalleryPage() {
           </div>
         </div>
       </Section>
+
+      {/* Lightbox */}
+      {lightboxImage && (
+        <ImageLightbox
+          src={lightboxImage.src}
+          alt={lightboxImage.alt}
+          isOpen={!!lightboxImage}
+          onClose={() => setLightboxImage(null)}
+        />
+      )}
     </>
   );
 }

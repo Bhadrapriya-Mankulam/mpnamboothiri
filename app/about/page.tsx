@@ -1,14 +1,14 @@
-import { Metadata } from "next";
+"use client";
+
+import { useState } from "react";
 import Section from "@/components/Section";
 import StoneDivider from "@/components/StoneDivider";
 import Image from "next/image";
-
-export const metadata: Metadata = {
-  title: "About - Mankulam Purushothaman Namboothiri",
-  description: "Learn about Purushothaman Namboothiri's 50+ years of spiritual service, Keraleeya Thantric expertise, and dedication to Vedic wisdom.",
-};
+import ImageLightbox from "@/components/ImageLightbox";
 
 export default function AboutPage() {
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
+  
   return (
     <>
       <section className="relative pt-20 pb-12 stone-texture">
@@ -29,13 +29,17 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-start mb-12">
-              <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-xl">
+              <div 
+                className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-xl cursor-pointer group"
+                onClick={() => setLightboxImage({ src: "/images/PHOTO-2025-12-05-20-11-53(2).jpg", alt: "Purushothaman Namboothiri - Vedic Priest and Astrologer" })}
+              >
                 <Image
                   src="/images/PHOTO-2025-12-05-20-11-53(2).jpg"
                   alt="Purushothaman Namboothiri - Vedic Priest and Astrologer"
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               </div>
               <div>
                 <h2 className="font-heading text-2xl font-semibold text-deep-indigo-900 mb-4">
@@ -150,14 +154,19 @@ export default function AboutPage() {
                 {[3, 4, 5, 6].map((i) => (
                   <div
                     key={i}
-                    className="relative aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"
+                    className="relative aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer group"
+                    onClick={() => setLightboxImage({ 
+                      src: `/images/PHOTO-2025-12-05-20-11-53(${i}).jpg`, 
+                      alt: `Sacred ceremony ${i}` 
+                    })}
                   >
                     <Image
                       src={`/images/PHOTO-2025-12-05-20-11-53(${i}).jpg`}
                       alt={`Sacred ceremony ${i}`}
                       fill
-                      className="object-cover"
+                      className="object-cover transition-transform duration-300"
                     />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
                   </div>
                 ))}
               </div>
@@ -165,6 +174,16 @@ export default function AboutPage() {
           </div>
         </div>
       </Section>
+
+      {/* Lightbox */}
+      {lightboxImage && (
+        <ImageLightbox
+          src={lightboxImage.src}
+          alt={lightboxImage.alt}
+          isOpen={!!lightboxImage}
+          onClose={() => setLightboxImage(null)}
+        />
+      )}
     </>
   );
 }

@@ -1,12 +1,19 @@
+"use client";
+
+import { useState } from "react";
 import Section from "./Section";
 import StoneDivider from "./StoneDivider";
 import Link from "next/link";
 import Image from "next/image";
+import ImageLightbox from "./ImageLightbox";
 
 export default function AboutSection() {
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
+  
   return (
-    <Section className="bg-gradient-to-b from-white to-temple-stone-200/30">
-      <div className="container mx-auto px-4">
+    <>
+      <Section className="bg-gradient-to-b from-white to-temple-stone-200/30">
+        <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-deep-indigo-900 mb-4">
@@ -19,23 +26,32 @@ export default function AboutSection() {
           <div className="grid md:grid-cols-3 gap-6 items-start mb-8">
             {/* Main portrait */}
             <div className="md:col-span-1">
-              <div className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-lg border-2 border-temple-gold-300">
+              <div 
+                className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-lg border-2 border-temple-gold-300 cursor-pointer group"
+                onClick={() => setLightboxImage({ src: "/images/PHOTO-2025-12-05-20-11-53(1).jpg", alt: "Purushothaman Namboothiri - Vedic Priest" })}
+              >
                 <Image
                   src="/images/PHOTO-2025-12-05-20-11-53(1).jpg"
                   alt="Purushothaman Namboothiri - Vedic Priest"
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               </div>
               {/* Additional small photo */}
-              <div className="relative aspect-square rounded-lg overflow-hidden shadow-lg mt-4">
+              <div 
+                className="relative aspect-square rounded-lg overflow-hidden shadow-lg mt-4 cursor-pointer group"
+                onClick={() => setLightboxImage({ src: "/images/PHOTO-2025-12-05-20-11-53(2).jpg", alt: "Performing sacred rituals" })}
+              >
                 <Image
                   src="/images/PHOTO-2025-12-05-20-11-53(2).jpg"
                   alt="Performing sacred rituals"
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               </div>
+            </div>
             </div>
 
             {/* Content */}
@@ -74,21 +90,29 @@ export default function AboutSection() {
 
               {/* Additional action photos */}
               <div className="grid grid-cols-2 gap-4">
-                <div className="relative aspect-video rounded-lg overflow-hidden shadow-md">
+                <div 
+                  className="relative aspect-video rounded-lg overflow-hidden shadow-md cursor-pointer group"
+                  onClick={() => setLightboxImage({ src: "/images/PHOTO-2025-12-05-20-11-53(3).jpg", alt: "Conducting ceremony" })}
+                >
                   <Image
                     src="/images/PHOTO-2025-12-05-20-11-53(3).jpg"
                     alt="Conducting ceremony"
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
                 </div>
-                <div className="relative aspect-video rounded-lg overflow-hidden shadow-md">
+                <div 
+                  className="relative aspect-video rounded-lg overflow-hidden shadow-md cursor-pointer group"
+                  onClick={() => setLightboxImage({ src: "/images/PHOTO-2025-12-05-20-11-53(4).jpg", alt: "Temple rituals" })}
+                >
                   <Image
                     src="/images/PHOTO-2025-12-05-20-11-53(4).jpg"
                     alt="Temple rituals"
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
                 </div>
               </div>
             </div>
@@ -118,8 +142,18 @@ export default function AboutSection() {
             </Link>
           </div>
         </div>
-      </div>
-    </Section>
+      </Section>
+
+      {/* Lightbox */}
+      {lightboxImage && (
+        <ImageLightbox
+          src={lightboxImage.src}
+          alt={lightboxImage.alt}
+          isOpen={!!lightboxImage}
+          onClose={() => setLightboxImage(null)}
+        />
+      )}
+    </>
   );
 }
 

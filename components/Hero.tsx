@@ -1,11 +1,17 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, MessageCircle } from "lucide-react";
 import { getSiteData } from "@/lib/content";
 import StoneDivider from "./StoneDivider";
+import ImageLightbox from "./ImageLightbox";
 
 export default function Hero() {
   const siteData = getSiteData();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const heroImage = "/images/PHOTO-2025-12-05-20-11-53(4).jpg";
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center stone-texture pt-20 overflow-hidden">
@@ -24,14 +30,23 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
           {/* Portrait Image */}
           <div className="relative order-2 lg:order-1">
-            <div className="relative aspect-[3/4] max-w-md mx-auto rounded-lg overflow-hidden shadow-2xl border-4 border-temple-gold-400">
+            <div 
+              className="relative aspect-[3/4] max-w-md mx-auto rounded-lg overflow-hidden shadow-2xl border-4 border-temple-gold-400 cursor-pointer group"
+              onClick={() => setLightboxOpen(true)}
+            >
               <Image
-                src="/images/PHOTO-2025-12-05-20-11-53(4).jpg"
+                src={heroImage}
                 alt="Purushothaman Namboothiri performing sacred homam ceremony"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
                 priority
               />
+              {/* Overlay hint */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-semibold bg-black/50 px-4 py-2 rounded-full">
+                  Click to expand
+                </span>
+              </div>
             </div>
             {/* Decorative element */}
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-temple-gold-200 rounded-full blur-2xl opacity-50 -z-10" />
@@ -89,6 +104,14 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Lightbox */}
+      <ImageLightbox
+        src={heroImage}
+        alt="Purushothaman Namboothiri performing sacred homam ceremony"
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+      />
     </section>
   );
 }

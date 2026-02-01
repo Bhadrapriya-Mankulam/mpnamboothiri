@@ -1,8 +1,14 @@
+"use client";
+
+import { useState } from "react";
 import Section from "./Section";
 import StoneDivider from "./StoneDivider";
 import Image from "next/image";
+import ImageLightbox from "./ImageLightbox";
 
 export default function PhotoShowcase() {
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
+  
   const showcaseImages = [
     { 
       src: "/images/PHOTO-2025-12-05-20-11-53(3).jpg", 
@@ -43,7 +49,8 @@ export default function PhotoShowcase() {
           {showcaseImages.map((image, index) => (
             <div 
               key={index}
-              className="relative group overflow-hidden rounded-lg shadow-lg aspect-square"
+              className="relative group overflow-hidden rounded-lg shadow-lg aspect-square cursor-pointer"
+              onClick={() => setLightboxImage({ src: image.src, alt: image.alt })}
             >
               <Image
                 src={image.src}
@@ -62,32 +69,54 @@ export default function PhotoShowcase() {
 
         {/* Additional larger images */}
         <div className="grid md:grid-cols-3 gap-6 mt-8 max-w-6xl mx-auto">
-          <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+          <div 
+            className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg cursor-pointer group"
+            onClick={() => setLightboxImage({ src: "/images/PHOTO-2025-12-05-20-11-53(7).jpg", alt: "Traditional Kerala rituals" })}
+          >
             <Image
               src="/images/PHOTO-2025-12-05-20-11-53(7).jpg"
               alt="Traditional Kerala rituals"
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
             />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
           </div>
-          <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+          <div 
+            className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg cursor-pointer group"
+            onClick={() => setLightboxImage({ src: "/images/PHOTO-2025-12-05-20-11-53(8).jpg", alt: "Vedic ceremonies" })}
+          >
             <Image
               src="/images/PHOTO-2025-12-05-20-11-53(8).jpg"
               alt="Vedic ceremonies"
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
             />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
           </div>
-          <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+          <div 
+            className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg cursor-pointer group"
+            onClick={() => setLightboxImage({ src: "/images/PHOTO-2025-12-05-20-11-53.jpg", alt: "Sacred homam ceremony" })}
+          >
             <Image
               src="/images/PHOTO-2025-12-05-20-11-53.jpg"
               alt="Sacred homam ceremony"
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
             />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
           </div>
         </div>
       </div>
+      
+      {/* Lightbox */}
+      {lightboxImage && (
+        <ImageLightbox
+          src={lightboxImage.src}
+          alt={lightboxImage.alt}
+          isOpen={!!lightboxImage}
+          onClose={() => setLightboxImage(null)}
+        />
+      )}
     </Section>
   );
 }
