@@ -16,16 +16,30 @@ export default function AboutSection() {
             <StoneDivider className="max-w-xs mx-auto mb-8 mt-6" />
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
-            <div className="relative aspect-square rounded-lg overflow-hidden shadow-lg">
-              <Image
-                src="/images/PHOTO-2025-12-05-20-11-53(1).jpg"
-                alt="Purushothaman Namboothiri - Vedic Priest"
-                fill
-                className="object-cover"
-              />
+          <div className="grid md:grid-cols-3 gap-6 items-start mb-8">
+            {/* Main portrait */}
+            <div className="md:col-span-1">
+              <div className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-lg border-2 border-temple-gold-300">
+                <Image
+                  src="/images/PHOTO-2025-12-05-20-11-53(1).jpg"
+                  alt="Purushothaman Namboothiri - Vedic Priest"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              {/* Additional small photo */}
+              <div className="relative aspect-square rounded-lg overflow-hidden shadow-lg mt-4">
+                <Image
+                  src="/images/PHOTO-2025-12-05-20-11-53(2).jpg"
+                  alt="Performing sacred rituals"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
-            <div>
+
+            {/* Content */}
+            <div className="md:col-span-2">
               <h3 className="font-heading text-2xl font-semibold text-deep-indigo-900 mb-4">
                 A Distinguished Namboothiri Priest & Astrologer
               </h3>
@@ -39,7 +53,7 @@ export default function AboutSection() {
                 For the past 32 years, he has been a pillar of the spiritual community in Chembur, Mumbai, 
                 serving devotees across India and worldwide with authenticity and precision.
               </p>
-              <div className="space-y-2">
+              <div className="space-y-2 mb-6">
                 <div className="flex items-center gap-2">
                   <span className="text-saffron-600 font-bold">✓</span>
                   <span className="text-text-muted">Authentic Kerala-style rituals</span>
@@ -55,6 +69,26 @@ export default function AboutSection() {
                 <div className="flex items-center gap-2">
                   <span className="text-saffron-600 font-bold">✓</span>
                   <span className="text-text-muted">Global clientele: India, USA, Europe, Middle East</span>
+                </div>
+              </div>
+
+              {/* Additional action photos */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="relative aspect-video rounded-lg overflow-hidden shadow-md">
+                  <Image
+                    src="/images/PHOTO-2025-12-05-20-11-53(3).jpg"
+                    alt="Conducting ceremony"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="relative aspect-video rounded-lg overflow-hidden shadow-md">
+                  <Image
+                    src="/images/PHOTO-2025-12-05-20-11-53(4).jpg"
+                    alt="Temple rituals"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
             </div>
