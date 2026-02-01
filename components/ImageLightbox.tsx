@@ -16,6 +16,9 @@ export default function ImageLightbox({ src, alt, isOpen, onClose }: ImageLightb
     if (isOpen) {
       // Prevent scrolling when lightbox is open
       document.body.style.overflow = "hidden";
+      
+      // Push a new history state when opening lightbox
+      window.history.pushState({ lightboxOpen: true }, '');
     } else {
       document.body.style.overflow = "unset";
     }
@@ -27,12 +30,22 @@ export default function ImageLightbox({ src, alt, isOpen, onClose }: ImageLightb
       }
     };
 
+    // Handle browser back button
+    const handlePopState = (e: PopStateEvent) => {
+      if (isOpen) {
+        e.preventDefault();
+        onClose();
+      }
+    };
+
     if (isOpen) {
       document.addEventListener("keydown", handleEscape);
+      window.addEventListener("popstate", handlePopState);
     }
 
     return () => {
       document.removeEventListener("keydown", handleEscape);
+      window.removeEventListener("popstate", handlePopState);
       document.body.style.overflow = "unset";
     };
   }, [isOpen, onClose]);
@@ -69,8 +82,9 @@ export default function ImageLightbox({ src, alt, isOpen, onClose }: ImageLightb
       </div>
 
       {/* Click outside hint */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/60 text-sm hidden md:block">
-        Click outside or press ESC to close
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/60 text-sm text-center px-4">
+        <span className="hidden md:inline">Click outside or press ESC to close</span>
+        <span className="md:hidden">Tap outside or use back button to close</span>
       </div>
     </div>
   );
