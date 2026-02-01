@@ -26,8 +26,8 @@ export default function Hero() {
           <div className="relative order-2 lg:order-1">
             <div className="relative aspect-[3/4] max-w-md mx-auto rounded-lg overflow-hidden shadow-2xl border-4 border-temple-gold-400">
               <Image
-                src="/images/PHOTO-2025-12-05-20-11-53(2).jpg"
-                alt="Purushothaman Namboothiri - Vedic Priest & Astrologer"
+                src="/images/PHOTO-2025-12-05-20-11-53(4).jpg"
+                alt="Purushothaman Namboothiri performing sacred homam ceremony"
                 fill
                 className="object-cover"
                 priority
