@@ -1,8 +1,8 @@
 [
   {
-    "slug": "ganapathi-homam",
-    "name": "Ganapathi Homam",
-    "short": "Remove obstacles and bless new beginnings",
+    "slug": "ganapathi-bala-ganapathi-homam",
+    "name": "Ganapathi & Bala Ganapathi Homam",
+    "short": "For removing obstacles and new beginnings",
     "duration": "2-3 hours",
     "itemsClient": ["Rice", "Fruits", "Flowers", "Coconut", "Ghee"],
     "itemsPriest": ["Vedic texts", "Homam materials", "Sacred fire setup"],
@@ -12,33 +12,9 @@
     "category": "homam"
   },
   {
-    "slug": "bala-ganapathi-homam",
-    "name": "Bala Ganapathi Homam",
-    "short": "Special homam for children's wellbeing and removing obstacles",
-    "duration": "2-3 hours",
-    "itemsClient": ["Rice", "Fruits", "Flowers", "Sweets", "Ghee"],
-    "itemsPriest": ["Vedic texts", "Homam materials", "Sacred fire setup"],
-    "startingDakshina": "Contact for details",
-    "onSite": true,
-    "online": false,
-    "category": "homam"
-  },
-  {
-    "slug": "sudarsana-homam",
-    "name": "Sudarsana Homam",
-    "short": "Protection and removal of negative energies",
-    "duration": "3-4 hours",
-    "itemsClient": ["Rice", "Fruits", "Flowers", "Ghee", "Sacred herbs"],
-    "itemsPriest": ["Vedic texts", "Homam materials", "Sacred fire setup"],
-    "startingDakshina": "Contact for details",
-    "onSite": true,
-    "online": false,
-    "category": "homam"
-  },
-  {
-    "slug": "aghora-homam",
-    "name": "Aghora Homam",
-    "short": "Powerful ritual for protection and removal of negative energies",
+    "slug": "sudarsana-aghora-homam",
+    "name": "Sudarsana & Aghora Homam",
+    "short": "For protection and removal of negative energies",
     "duration": "3-4 hours",
     "itemsClient": ["Rice", "Fruits", "Flowers", "Ghee", "Sacred herbs"],
     "itemsPriest": ["Vedic texts", "Homam materials", "Sacred fire setup"],
@@ -50,7 +26,7 @@
   {
     "slug": "prathyangira-homam",
     "name": "Prathyangira Homam",
-    "short": "Overcome intense challenges and enemies",
+    "short": "For overcoming intense challenges and enemies",
     "duration": "3-4 hours",
     "itemsClient": ["Rice", "Fruits", "Flowers", "Ghee", "Sacred herbs"],
     "itemsPriest": ["Vedic texts", "Homam materials", "Sacred fire setup"],
@@ -61,8 +37,8 @@
   },
   {
     "slug": "thila-homam",
-    "name": "Thila Homam (Pithru Karma)",
-    "short": "Ancestral blessings and honoring departed souls",
+    "name": "Thila Homam",
+    "short": "For ancestral blessings (Pithru Karma)",
     "duration": "2-3 hours",
     "itemsClient": ["Black sesame", "Rice", "Fruits", "Ghee"],
     "itemsPriest": ["Vedic texts", "Homam materials", "Sacred fire setup"],
@@ -74,7 +50,7 @@
   {
     "slug": "swayamvara-homam",
     "name": "Swayamvara Homam",
-    "short": "Matrimonial harmony and finding a life partner",
+    "short": "For matrimonial harmony and finding a life partner",
     "duration": "3-4 hours",
     "itemsClient": ["Rice", "Fruits", "Flowers", "Ghee", "Turmeric"],
     "itemsPriest": ["Vedic texts", "Homam materials", "Sacred fire setup"],
@@ -86,7 +62,7 @@
   {
     "slug": "santhana-gopala-homam",
     "name": "Santhana Gopala Homam",
-    "short": "Blessings for children's wellbeing and prosperity",
+    "short": "For the wellbeing and blessing of children",
     "duration": "3-4 hours",
     "itemsClient": ["Rice", "Fruits", "Flowers", "Ghee", "Milk"],
     "itemsPriest": ["Vedic texts", "Homam materials", "Sacred fire setup"],
@@ -108,11 +84,11 @@
     "category": "homam"
   },
   {
-    "slug": "bhagavathi-seva",
-    "name": "Bhagavathi Seva",
-    "short": "Invoking the grace of the Divine Mother",
+    "slug": "bhagavathi-ishwara-seva",
+    "name": "Bhagavathi Seva & Ishwara Seva",
+    "short": "Invoking the grace of the Divine Mother and the Supreme Lord",
     "duration": "2-3 hours",
-    "itemsClient": ["Flowers", "Fruits", "Coconut", "Turmeric", "Kumkum"],
+    "itemsClient": ["Flowers", "Fruits", "Coconut", "Bilva leaves", "Turmeric", "Kumkum"],
     "itemsPriest": ["Puja materials", "Vedic mantras"],
     "startingDakshina": "Contact for details",
     "onSite": true,
@@ -120,33 +96,9 @@
     "category": "pooja"
   },
   {
-    "slug": "ishwara-seva",
-    "name": "Ishwara Seva",
-    "short": "Invoking the grace of the Supreme Lord",
-    "duration": "2-3 hours",
-    "itemsClient": ["Flowers", "Fruits", "Bilva leaves", "Milk", "Honey"],
-    "itemsPriest": ["Puja materials", "Vedic mantras"],
-    "startingDakshina": "Contact for details",
-    "onSite": true,
-    "online": true,
-    "category": "pooja"
-  },
-  {
-    "slug": "dwadashanama-pooja",
-    "name": "Dwadashanama Pooja",
+    "slug": "dwadashanama-sayujya-pooja",
+    "name": "Dwadashanama Pooja & Sayujya Pooja",
     "short": "Specialized offerings for spiritual liberation",
-    "duration": "3-4 hours",
-    "itemsClient": ["Flowers", "Fruits", "Sacred materials as advised"],
-    "itemsPriest": ["Puja materials", "Vedic mantras", "Sacred texts"],
-    "startingDakshina": "Contact for details",
-    "onSite": true,
-    "online": false,
-    "category": "pooja"
-  },
-  {
-    "slug": "sayujya-pooja",
-    "name": "Sayujya Pooja",
-    "short": "Sacred ritual for spiritual liberation and union with the Divine",
     "duration": "3-4 hours",
     "itemsClient": ["Flowers", "Fruits", "Sacred materials as advised"],
     "itemsPriest": ["Puja materials", "Vedic mantras", "Sacred texts"],
@@ -168,7 +120,7 @@
     "category": "pooja"
   },
   {
-    "slug": "satyanarayan-puja",
+    "slug": "sathyanarayana-pooja",
     "name": "Sathyanarayana Pooja",
     "short": "For peace, health, and family prosperity",
     "duration": "3-4 hours",
@@ -190,18 +142,6 @@
     "onSite": true,
     "online": true,
     "category": "remedy"
-  },
-  {
-    "slug": "astrology-consultation",
-    "name": "Astrological Consultation",
-    "short": "Personalized guidance based on Vedic astrology",
-    "duration": "1-2 hours",
-    "itemsClient": ["Birth details (date, time, place)"],
-    "itemsPriest": ["Astrological charts", "Vedic texts"],
-    "startingDakshina": "Contact for details",
-    "onSite": true,
-    "online": true,
-    "category": "consultation"
   }
 ]
 
